@@ -18,11 +18,11 @@ Then [create an incoming webhook](https://my.slack.com/services/new/incoming-web
 
 ## Laravel 5
 
-Add the `Maknz\Slack\Laravel\ServiceProvider` provider to the `providers` array in `config/app.php`:
+Add the `OsLegend23\Slack\SlackServiceProvider` provider to the `providers` array in `config/app.php`:
 
 ```php
 'providers' => [
-  OsLegend23\Slack\Laravel\ServiceProvider::class,
+  OsLegend23\Slack\SlackServiceProvider::class,
 ],
 ```
 
@@ -31,7 +31,7 @@ Then add the facade to your `aliases` array:
 ```php
 'aliases' => [
   ...
-  'Slack' => OsLegend23\Slack\Laravel\Facade::class,
+  'Slack' => OsLegend23\Slack\Facade::class,
 ],
 ```
 
@@ -44,7 +44,7 @@ Add the `OsLegend23\Slack\Laravel\ServiceProvider` provider to the `providers` a
 ```php
 'providers' => [
   ...
-  'OsLegend23\Slack\Laravel\ServiceProvider',
+  'OsLegend23\Slack\SlackServiceProvider',
 ],
 ```
 
@@ -53,7 +53,7 @@ Then add the facade to your `aliases` array:
 ```php
 'aliases' => [
   ...
-  'Slack' => 'OsLegend23\Slack\Laravel\Facade',
+  'Slack' => 'OsLegend23\Slack\Facade',
 ],
 ```
 
