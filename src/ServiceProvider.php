@@ -1,6 +1,6 @@
 <?php
 
-namespace Maknz\Slack\Laravel;
+namespace OsLegend23\Slack\Laravel;
 
 use RuntimeException;
 
@@ -62,7 +62,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     {
         $app = $this->app;
 
-        $version = intval($app::VERSION);
+        $version = (int)$app::VERSION;
 
         switch ($version) {
             case 4:

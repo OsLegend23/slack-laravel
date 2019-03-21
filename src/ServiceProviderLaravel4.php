@@ -1,11 +1,12 @@
 <?php
 
-namespace Maknz\Slack\Laravel;
+namespace OsLegend23\Slack\Laravel;
 
+use Illuminate\Support\ServiceProvider;
 use Maknz\Slack\Client as Client;
 use GuzzleHttp\Client as Guzzle;
 
-class ServiceProviderLaravel4 extends \Illuminate\Support\ServiceProvider
+class ServiceProviderLaravel4 extends ServiceProvider
 {
     /**
      * Bootstrap the application events.
@@ -14,7 +15,7 @@ class ServiceProviderLaravel4 extends \Illuminate\Support\ServiceProvider
      */
     public function boot()
     {
-        $this->package('maknz/slack-laravel', null, __DIR__);
+        $this->package('oslegend23/slack-laravel', null, __DIR__);
     }
 
     /**
@@ -24,7 +25,7 @@ class ServiceProviderLaravel4 extends \Illuminate\Support\ServiceProvider
      */
     public function register()
     {
-        $this->app['maknz.slack'] = $this->app->share(function ($app) {
+        $this->app->singleton('maknz.slack', function ($app) {
             $allow_markdown = $app['config']->get('slack::allow_markdown');
 
             $markdown_in_attachments = $app['config']->get('slack::markdown_in_attachments');
