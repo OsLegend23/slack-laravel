@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OsLegend23\\Slack\\Laravel\\": "src/"
+            "OsLegend23\\Slack\\": "src/"
         }
     },
     "minimum-stability": "stable"

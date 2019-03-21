@@ -1,10 +1,11 @@
 <?php
 
-namespace OsLegend23\Slack\Laravel;
+namespace OsLegend23\Slack;
 
+use Illuminate\Support\ServiceProvider;
 use RuntimeException;
 
-class ServiceProvider extends \Illuminate\Support\ServiceProvider
+class SlackServiceProvider extends ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
@@ -16,7 +17,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     /**
      * The actual provider.
      *
-     * @var \Illuminate\Support\ServiceProvider
+     * @var ServiceProvider
      */
     protected $provider;
 
@@ -66,10 +67,10 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 
         switch ($version) {
             case 4:
-              return new ServiceProviderLaravel4($app);
+              return new SlackServiceProviderLaravel4($app);
 
             case 5:
-              return new ServiceProviderLaravel5($app);
+              return new SlackServiceProviderLaravel5($app);
 
             default:
               throw new RuntimeException('Your version of Laravel is not supported');

@@ -1,6 +1,6 @@
 <?php
 
-namespace OsLegend23\Slack\Laravel;
+namespace OsLegend23\Slack;
 
 class Facade extends \Illuminate\Support\Facades\Facade
 {

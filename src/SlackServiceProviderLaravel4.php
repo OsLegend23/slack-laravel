@@ -1,12 +1,12 @@
 <?php
 
-namespace OsLegend23\Slack\Laravel;
+namespace OsLegend23\Slack;
 
 use Illuminate\Support\ServiceProvider;
 use Maknz\Slack\Client as Client;
 use GuzzleHttp\Client as Guzzle;
 
-class ServiceProviderLaravel4 extends ServiceProvider
+class SlackServiceProviderLaravel4 extends ServiceProvider
 {
     /**
      * Bootstrap the application events.
